@@ -7,3 +7,7 @@ parts:
   - caption: 1 - INTRODUCCIÓN
     chapters:
     - file: contenido/1/introduccion-programacion-computadoras
+    - file: contenido/1/introduccion-ciencia-datos-geoespaciales
+    - file: contenido/1/markdown
+    - file: contenido/1/git
+
