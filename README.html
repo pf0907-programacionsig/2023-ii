@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>PF-0907 Programación de aplicaciones en SIG &#8212; PF-0907 Programación de aplicaciones en SIG 2023-II</title>
+    <title>Creación y configuración del Jupyter Book de PF-0907 Programación en SIG 2023-II &#8212; PF-0907 Programación de aplicaciones en SIG 2023-II</title>
   
   
   
@@ -61,10 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introducción a la programación de computadoras" href="contenido/1/introduccion-programacion-computadoras.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -130,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -149,8 +148,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
                     PF-0907 Programación de aplicaciones en SIG
                 </a>
             </li>
@@ -229,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/pf0907-programacionsig/2023-ii/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/pf0907-programacionsig/2023-ii/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -259,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/index.md" target="_blank"
+      <li><a href="_sources/README.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +340,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PF-0907 Programación de aplicaciones en SIG</h1>
+    <h1>Creación y configuración del Jupyter Book de PF-0907 Programación en SIG 2023-II</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -351,7 +350,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contacto">Contacto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-un-ambiente-conda">1. Creación de un ambiente Conda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-del-jupyter-book-principal-y-publicacion-inicial-del-sitio-web-en-github-pages">2. Creación del Jupyter Book principal y publicación inicial del sitio web en GitHub Pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-un-jupyter-book-para-cada-curso-y-publicacion-inicial-del-sitio-web-en-github-pages">3. Creación de un Jupyter Book para cada curso y publicación inicial del sitio web en GitHub Pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publicacion-de-modificaciones">4. Publicación de modificaciones</a></li>
 </ul>
             </nav>
         </div>
@@ -363,26 +365,121 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pf-0907-programacion-de-aplicaciones-en-sig">
-<h1>PF-0907 Programación de aplicaciones en SIG<a class="headerlink" href="#pf-0907-programacion-de-aplicaciones-en-sig" title="Permalink to this heading">#</a></h1>
-<p>Este curso trata sobre el manejo, visualización y análisis de datos geoespaciales mediante el lenguaje de programación Python. Se estudian los fundamentos de Python, sus módulos geoespaciales y su empleo en el desarrollo de aplicaciones en sistemas de información geográfica (SIG). Se presenta una visión general de cómo metodologías y técnicas de ciencia de datos pueden ser aplicadas al componente geoespacial de diversos problemas.</p>
-<p>El curso se imparte en la <a class="reference external" href="https://www.sep.ucr.ac.cr/posgrados/geografia/folleto/ppgeo-teledeteccion.pdf">Maestría Profesional en Sistemas de Información Geográfica y Teledetección</a> de la <a class="reference external" href="https://www.ucr.ac.cr/">Universidad de Costa Rica</a> y la <a class="reference external" href="https://www.una.ac.cr/">Universidad Nacional</a>.</p>
-<p>Para más información sobre los contenidos, metodología, evaluación y otros temas, puede consultar el <a class="reference external" href="https://github.com/pf0907-programacionsig/2023-ii/blob/main/contenido/informacion-general/pf0907-programacionsig-g001-2023-ii.pdf">programa del curso</a>.</p>
-<section id="contacto">
-<h2>Contacto<a class="headerlink" href="#contacto" title="Permalink to this heading">#</a></h2>
-<p>Si tiene alguna pregunta o comentario sobre este curso, por favor contacte a:</p>
-<blockquote>
-<div><p>Manuel Vargas - <a class="reference external" href="mailto:manuel&#46;vargas_d&#37;&#52;&#48;ucr&#46;ac&#46;cr">manuel<span>&#46;</span>vargas_d<span>&#64;</span>ucr<span>&#46;</span>ac<span>&#46;</span>cr</a><br />
-Profesor<br />
-Universidad de Costa Rica,<br />
-Ciudad Universitaria Rodrigo Facio,<br />
-San Pedro de Montes de Oca,<br />
-Costa Rica.</p>
-</div></blockquote>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Los contenidos de este curso, a menos que se especifique de otra forma, se comparten mediante una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.</p>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="creacion-y-configuracion-del-jupyter-book-de-pf-0907-programacion-en-sig-2023-ii">
+<h1>Creación y configuración del Jupyter Book de PF-0907 Programación en SIG 2023-II<a class="headerlink" href="#creacion-y-configuracion-del-jupyter-book-de-pf-0907-programacion-en-sig-2023-ii" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Creación de un ambiente Conda.</p></li>
+<li><p>Creación del Jupyter Book principal: <a class="reference external" href="http://pf0907-programacionsig.github.io">pf0907-programacionsig.github.io</a></p></li>
+<li><p>Creación de un Jupyter Book para cada curso, por ejemplo: 2023-ii, accesible en <a class="reference external" href="https://pf0907-programacionsig.github.io/2023-ii/">https://pf0907-programacionsig.github.io/2023-ii/</a></p></li>
+<li><p>Publicación de modificaciones.</p></li>
+</ol>
+<section id="creacion-de-un-ambiente-conda">
+<h2>1. Creación de un ambiente Conda<a class="headerlink" href="#creacion-de-un-ambiente-conda" title="Permalink to this heading">#</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Actualización de Conda</span>
+conda<span class="w"> </span>update<span class="w"> </span>conda
+
+<span class="c1"># Borrado del ambiente (si es que existe)</span>
+<span class="c1"># conda remove -n pf0907-2023-ii --all</span>
+
+<span class="c1"># Creación del ambiente</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pf0907-2023-ii
+
+<span class="c1"># Activación del ambiente</span>
+conda<span class="w"> </span>activate<span class="w"> </span>pf0907-2023-ii
+
+<span class="c1"># Configuración del ambiente</span>
+conda<span class="w"> </span>config<span class="w"> </span>--env<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
+conda<span class="w"> </span>config<span class="w"> </span>--env<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span>strict
+
+<span class="c1"># Instalación de mamba</span>
+conda<span class="w"> </span>install<span class="w"> </span>mamba
+
+<span class="c1"># Instalación de módulos</span>
+mamba<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>python<span class="w"> </span>ipykernel<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab<span class="w"> </span>jupyter-book<span class="w"> </span>ghp-import<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>plotly<span class="w"> </span>gdal<span class="w"> </span>fiona<span class="w"> </span>shapely<span class="w"> </span>geopandas<span class="w"> </span>rasterio<span class="w"> </span>folium<span class="w"> </span>streamlit
+
+<span class="c1"># Desactivación del ambiente</span>
+conda<span class="w"> </span>deactivate
+</pre></div>
 </div>
+</section>
+<section id="creacion-del-jupyter-book-principal-y-publicacion-inicial-del-sitio-web-en-github-pages">
+<h2>2. Creación del Jupyter Book principal y publicación inicial del sitio web en GitHub Pages<a class="headerlink" href="#creacion-del-jupyter-book-principal-y-publicacion-inicial-del-sitio-web-en-github-pages" title="Permalink to this heading">#</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>pf0907-2023-ii
+
+<span class="c1"># Creación del Jupyter Book con una plantilla inicial</span>
+jupyter-book<span class="w"> </span>create<span class="w"> </span>pf0907-programacionsig.github.io
+
+<span class="c1"># Generación de archivos HTML (en el subdirectorio _build/html)</span>
+jupyter-book<span class="w"> </span>build<span class="w"> </span>pf0907-programacionsig.github.io
+
+<span class="c1"># En este punto, debe crearse en GitHub el repositorio pf0907-programacionsig.github.io</span>
+
+<span class="c1"># Configuración del repositorio local y su branch main (para manejar los archivos fuente)</span>
+<span class="nb">cd</span><span class="w"> </span>pf0907-programacionsig.github.io
+git<span class="w"> </span>init
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Commit inicial&quot;</span>
+git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:pf0907-programacionsig/pf0907-programacionsig.github.io.git
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Creación del branch gh-pages (para manejar los archivos HTML publicados)</span>
+ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>_build/html
+
+<span class="c1"># En este punto, se configura el repositorio para buscar los archivos de GH Pages en la rama gh-pages</span>
+<span class="c1"># El sitio debe estar disponible en https://pf0907-programacionsig.github.io/</span>
+
+conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+</section>
+<section id="creacion-de-un-jupyter-book-para-cada-curso-y-publicacion-inicial-del-sitio-web-en-github-pages">
+<h2>3. Creación de un Jupyter Book para cada curso y publicación inicial del sitio web en GitHub Pages<a class="headerlink" href="#creacion-de-un-jupyter-book-para-cada-curso-y-publicacion-inicial-del-sitio-web-en-github-pages" title="Permalink to this heading">#</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>pf0907-2023-ii
+
+<span class="c1"># Creación del Jupyter Book con una plantilla inicial</span>
+jupyter-book<span class="w"> </span>create<span class="w"> </span><span class="m">2023</span>-ii
+
+<span class="c1"># Generación de archivos HTML (en el subdirectorio _build/html)</span>
+jupyter-book<span class="w"> </span>build<span class="w"> </span><span class="m">2023</span>-ii
+
+<span class="c1"># En este punto, se crea en GitHub el repositorio 2023-ii</span>
+
+<span class="c1"># Configuración del repositorio local y su branch main (para manejar los archivos fuente)</span>
+<span class="nb">cd</span><span class="w"> </span><span class="m">2023</span>-ii
+git<span class="w"> </span>init
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Commit inicial&quot;</span>
+git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:pf0907-programacionsig/2023-ii.git
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Creación del branch gh-pages (para manejar los archivos HTML publicados)</span>
+ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>_build/html
+
+<span class="c1"># En este punto, se configura el repositorio para buscar los archivos de GH Pages en la rama gh-pages</span>
+<span class="c1"># El sitio debe estar disponible en https://pf0907-programacionsig.github.io/2023-ii/</span>
+</pre></div>
+</div>
+</section>
+<section id="publicacion-de-modificaciones">
+<h2>4. Publicación de modificaciones<a class="headerlink" href="#publicacion-de-modificaciones" title="Permalink to this heading">#</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generación de archivos HTML (debe hacerse desde el directorio padre del Jupyter Book)</span>
+jupyter-book<span class="w"> </span>build<span class="w"> </span><span class="m">2023</span>-ii
+
+<span class="nb">cd</span><span class="w"> </span><span class="m">2023</span>-ii
+
+<span class="c1"># Aplicación de cambios en el branch main</span>
+git<span class="w"> </span>status
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;###Comentario###&quot;</span>
+git<span class="w"> </span>push
+
+<span class="c1"># Aplicación de cambios en el branch gh-pages</span>
+ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>_build/html
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -416,15 +513,6 @@ Costa Rica.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="right-next"
-       href="contenido/1/introduccion-programacion-computadoras.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introducción a la programación de computadoras</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -443,7 +531,10 @@ Costa Rica.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contacto">Contacto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-un-ambiente-conda">1. Creación de un ambiente Conda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-del-jupyter-book-principal-y-publicacion-inicial-del-sitio-web-en-github-pages">2. Creación del Jupyter Book principal y publicación inicial del sitio web en GitHub Pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-un-jupyter-book-para-cada-curso-y-publicacion-inicial-del-sitio-web-en-github-pages">3. Creación de un Jupyter Book para cada curso y publicación inicial del sitio web en GitHub Pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publicacion-de-modificaciones">4. Publicación de modificaciones</a></li>
 </ul>
   </nav></div>
 
