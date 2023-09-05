@@ -14,3 +14,6 @@ parts:
     chapters:
     - file: contenido/2/introduccion-python
     - file: contenido/2/sintaxis-python      
+  - caption: EVALUACIONES
+    chapters:
+    - file: contenido/evaluaciones/tarea-01
