@@ -1,7 +1,7 @@
 # Tarea 01
 
 ## Fecha y hora límite de entrega
-Martes 12 de setiembre de 2022, 16:59 a.m.
+Martes 12 de setiembre de 2023, 16:59 a.m.
 
 ## Objetivos
 Cada estudiante debe mostrar que es capaz de:
@@ -11,8 +11,8 @@ Cada estudiante debe mostrar que es capaz de:
 3.  Publicar repositorios en GitHub como sitios web en GitHub Pages.
 
 ## Entregables
-1.  Dirección de un repositorio en GitHub (ej. https://github.com/mfvargas/tarea-01) que contenga un documento escrito en Markdown llamado `README.md`, con el contenido especificado en la sección Desarrollo.
-2.  Dirección de un sitio web publicado en GitHub Pages generado a partir del repositorio especificado en el punto anterior (ej. https://mfvargas.github.io/tarea-01/). **Se recomienda usar un nombre más significativo que `tarea-01` para el repositorio, acorde con su contenido.**
+1.  Dirección de un repositorio en GitHub (ej. `https://github.com/mfvargas/tarea-01`) que contenga un documento escrito en Markdown llamado `README.md`, con el contenido especificado en la sección Desarrollo.
+2.  Dirección de un sitio web publicado en GitHub Pages generado a partir del repositorio especificado en el punto anterior (ej. `https://mfvargas.github.io/tarea-01/`). **Se recomienda usar un nombre más significativo que `tarea-01` para el repositorio, acorde con su contenido.**
 
 La entrega debe realizarse a través de la plataforma Mediación Virtual.
 
