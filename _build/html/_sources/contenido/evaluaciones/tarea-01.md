@@ -1,7 +1,7 @@
 # Tarea 01
 
 ## Fecha y hora límite de entrega
-Martes 12 de setiembre de 2023, 16:59 a.m.
+Martes 12 de setiembre de 2023, 4:59 p.m.
 
 ## Objetivos
 Cada estudiante debe mostrar que es capaz de:
