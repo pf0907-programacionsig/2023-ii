@@ -389,7 +389,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-de-analisis">Operaciones de análisis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficacion">Graficación</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-bibliotecas">Carga de bibliotecas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#estilo-de-los-graficos">Estilo de los gráficos</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-graficos">Ejemplos de gráficos</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-registros-de-presencia-por-ano">Distribución de registros de presencia por año</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-registros-de-presencia-por-mes">Distribución de registros de presencia por mes</a></li>
@@ -705,12 +704,12 @@ Name: pais0, dtype: object
 <section id="operaciones-basicas">
 <h2>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permalink to this heading">#</a></h2>
 <p>Seguidamente, se describen y ejemplifican algunas de las funciones básicas de pandas.</p>
-<p>En los siguientes ejemplos, se utilizará un conjunto de registros de presencia de felinos (familia <em>Felidae</em>) de Costa Rica, obtenido a través de una <a class="reference external" href="https://www.gbif.org/occurrence/download/0016217-210914110416597">consulta al portal de GBIF</a>.</p>
+<p>En los siguientes ejemplos, se utilizará un conjunto de registros de presencia de félidos (familia <em>Felidae</em>) de Costa Rica, obtenido a través de una <a class="reference external" href="https://doi.org/10.15468/dl.cz6t5n">consulta al portal de GBIF</a>.</p>
 <section id="read-csv-carga-de-datos">
 <h3>read_csv() - carga de datos<a class="headerlink" href="#read-csv-carga-de-datos" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">felinos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/gf0657-programacionsig/2022-ii/main/contenido/3/datos/gbif/felinos.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">felidos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/pf0907-programacionsig/2023-ii/main/contenido/3/datos/gbif/felidos.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -720,68 +719,68 @@ Name: pais0, dtype: object
 <h3>info() - información general sobre un conjunto de datos<a class="headerlink" href="#info-informacion-general-sobre-un-conjunto-de-datos" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">felinos</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">felidos</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 150 entries, 0 to 149
+RangeIndex: 240 entries, 0 to 239
 Data columns (total 50 columns):
  #   Column                            Non-Null Count  Dtype  
 ---  ------                            --------------  -----  
- 0   gbifID                            150 non-null    int64  
- 1   datasetKey                        150 non-null    object 
- 2   occurrenceID                      147 non-null    object 
- 3   kingdom                           150 non-null    object 
- 4   phylum                            150 non-null    object 
- 5   class                             150 non-null    object 
- 6   order                             150 non-null    object 
- 7   family                            150 non-null    object 
- 8   genus                             150 non-null    object 
- 9   species                           150 non-null    object 
- 10  infraspecificEpithet              18 non-null     object 
- 11  taxonRank                         150 non-null    object 
- 12  scientificName                    150 non-null    object 
- 13  verbatimScientificName            150 non-null    object 
+ 0   gbifID                            240 non-null    int64  
+ 1   datasetKey                        240 non-null    object 
+ 2   occurrenceID                      236 non-null    object 
+ 3   kingdom                           240 non-null    object 
+ 4   phylum                            240 non-null    object 
+ 5   class                             240 non-null    object 
+ 6   order                             240 non-null    object 
+ 7   family                            240 non-null    object 
+ 8   genus                             240 non-null    object 
+ 9   species                           240 non-null    object 
+ 10  infraspecificEpithet              20 non-null     object 
+ 11  taxonRank                         240 non-null    object 
+ 12  scientificName                    240 non-null    object 
+ 13  verbatimScientificName            240 non-null    object 
  14  verbatimScientificNameAuthorship  16 non-null     object 
- 15  countryCode                       150 non-null    object 
- 16  locality                          41 non-null     object 
- 17  stateProvince                     132 non-null    object 
- 18  occurrenceStatus                  150 non-null    object 
- 19  individualCount                   27 non-null     float64
- 20  publishingOrgKey                  150 non-null    object 
- 21  decimalLatitude                   150 non-null    float64
- 22  decimalLongitude                  150 non-null    float64
- 23  coordinateUncertaintyInMeters     129 non-null    float64
- 24  coordinatePrecision               0 non-null      float64
+ 15  countryCode                       240 non-null    object 
+ 16  locality                          43 non-null     object 
+ 17  stateProvince                     220 non-null    object 
+ 18  occurrenceStatus                  240 non-null    object 
+ 19  individualCount                   26 non-null     float64
+ 20  publishingOrgKey                  240 non-null    object 
+ 21  decimalLatitude                   240 non-null    float64
+ 22  decimalLongitude                  240 non-null    float64
+ 23  coordinateUncertaintyInMeters     211 non-null    float64
+ 24  coordinatePrecision               9 non-null      float64
  25  elevation                         3 non-null      float64
  26  elevationAccuracy                 3 non-null      float64
  27  depth                             3 non-null      float64
  28  depthAccuracy                     3 non-null      float64
- 29  eventDate                         148 non-null    object 
- 30  day                               147 non-null    float64
- 31  month                             148 non-null    float64
- 32  year                              148 non-null    float64
- 33  taxonKey                          150 non-null    int64  
- 34  speciesKey                        150 non-null    int64  
- 35  basisOfRecord                     150 non-null    object 
- 36  institutionCode                   137 non-null    object 
- 37  collectionCode                    150 non-null    object 
- 38  catalogNumber                     150 non-null    object 
+ 29  eventDate                         238 non-null    object 
+ 30  day                               237 non-null    float64
+ 31  month                             238 non-null    float64
+ 32  year                              238 non-null    float64
+ 33  taxonKey                          240 non-null    int64  
+ 34  speciesKey                        240 non-null    int64  
+ 35  basisOfRecord                     240 non-null    object 
+ 36  institutionCode                   226 non-null    object 
+ 37  collectionCode                    240 non-null    object 
+ 38  catalogNumber                     240 non-null    object 
  39  recordNumber                      4 non-null      object 
- 40  identifiedBy                      121 non-null    object 
- 41  dateIdentified                    109 non-null    object 
- 42  license                           150 non-null    object 
- 43  rightsHolder                      132 non-null    object 
- 44  recordedBy                        135 non-null    object 
+ 40  identifiedBy                      208 non-null    object 
+ 41  dateIdentified                    196 non-null    object 
+ 42  license                           240 non-null    object 
+ 43  rightsHolder                      221 non-null    object 
+ 44  recordedBy                        238 non-null    object 
  45  typeStatus                        0 non-null      float64
  46  establishmentMeans                10 non-null     object 
- 47  lastInterpreted                   150 non-null    object 
- 48  mediaType                         102 non-null    object 
- 49  issue                             137 non-null    object 
+ 47  lastInterpreted                   240 non-null    object 
+ 48  mediaType                         189 non-null    object 
+ 49  issue                             239 non-null    object 
 dtypes: float64(13), int64(3), object(34)
-memory usage: 58.7+ KB
+memory usage: 93.9+ KB
 </pre></div>
 </div>
 </div>
@@ -792,7 +791,7 @@ memory usage: 58.7+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primeros 10 registros</span>
-<span class="n">felinos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">felidos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -841,105 +840,81 @@ memory usage: 58.7+ KB
   <tbody>
     <tr>
       <th>0</th>
-      <td>3337559907</td>
+      <td>891041333</td>
       <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/90794984</td>
+      <td>http://www.inaturalist.org/observations/519142</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
       <td>...</td>
-      <td>Marvin López M.</td>
-      <td>2021-08-11T17:02:57</td>
+      <td>canopalma</td>
+      <td>2014-02-03T15:52:21</td>
       <td>CC_BY_NC_4_0</td>
-      <td>Marvin López M.</td>
-      <td>Marvin López M.</td>
+      <td>canopalma</td>
+      <td>canopalma</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:26:16.096Z</td>
+      <td>2023-09-28T11:04:07.725Z</td>
       <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>CONTINENT_DERIVED_FROM_COORDINATES;TAXON_MATCH...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3333401669</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/88270427</td>
+      <td>865739381</td>
+      <td>5a659248-1f70-11e3-b2c5-00145eb45e9a</td>
+      <td>NaN</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
       <td>...</td>
-      <td>Tiziano Luka Pesci Rubilar</td>
-      <td>2021-07-23T17:52:04</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>CC_BY_NC_4_0</td>
-      <td>Rebeca Quirós</td>
-      <td>Rebeca Quirós</td>
+      <td>NaN</td>
+      <td>Ch. d’Eternod</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:15:51.507Z</td>
+      <td>2023-09-07T05:24:57.940Z</td>
       <td>NaN</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;CONTINENT_DERIVED...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3325502794</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/85490861</td>
+      <td>686473093</td>
+      <td>1d04e739-98a9-4e16-9970-8f8f3bf9e9e3</td>
+      <td>8f84e97e-1ed8-11e3-bfac-90b11c41863e</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus pardalis</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
       <td>...</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>2021-07-03T16:59:46</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>Sofía Pastor Parajeles</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T20:59:21.345Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>CC_BY_4_0</td>
+      <td>NaN</td>
+      <td>NONE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-27T15:55:14.109Z</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3314547422</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/84224884</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus pardalis</td>
-      <td>...</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>2021-06-23T20:39:47</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:25:26.648Z</td>
-      <td>StillImage</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>3307298689</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/82810053</td>
+      <td>686389681</td>
+      <td>1d04e739-98a9-4e16-9970-8f8f3bf9e9e3</td>
+      <td>8b908ce8-1ed8-11e3-bfac-90b11c41863e</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -948,16 +923,40 @@ memory usage: 58.7+ KB
       <td>Leopardus</td>
       <td>Leopardus wiedii</td>
       <td>...</td>
-      <td>David</td>
-      <td>2021-06-13T09:10:50</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>NaN</td>
+      <td>WILLE A &amp; DALY H V</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-27T15:55:25.123Z</td>
+      <td>NaN</td>
+      <td>COORDINATE_REPROJECTED</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>476877127</td>
+      <td>4bfac3ea-8763-4f4b-a71a-76a6f5f243d3</td>
+      <td>MCZ:Mamm:5720</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
+      <td>...</td>
+      <td>[no agent data]</td>
+      <td>NaN</td>
       <td>CC_BY_NC_4_0</td>
-      <td>David</td>
-      <td>David</td>
+      <td>President and Fellows of Harvard College</td>
+      <td>William More Gabb</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:25:57.478Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>2023-09-28T09:11:34.273Z</td>
+      <td>NaN</td>
+      <td>INSTITUTION_MATCH_FUZZY;COLLECTION_MATCH_FUZZY</td>
     </tr>
   </tbody>
 </table>
@@ -967,7 +966,7 @@ memory usage: 58.7+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Últimos 15 registros</span>
-<span class="n">felinos</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<span class="n">felidos</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1015,10 +1014,58 @@ memory usage: 58.7+ KB
   </thead>
   <tbody>
     <tr>
-      <th>145</th>
-      <td>439779436</td>
-      <td>7e2989f0-f762-11e1-a439-00145eb45e9a</td>
+      <th>235</th>
+      <td>1099959663</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>http://www.inaturalist.org/observations/1579688</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Leopardus</td>
+      <td>Leopardus wiedii</td>
+      <td>...</td>
+      <td>Paul Cools</td>
+      <td>2015-06-02T21:02:44</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>Paul Cools</td>
+      <td>Paul Cools</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T12:35:00.972Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>1065425532</td>
+      <td>7a25f7aa-03fb-4322-aaeb-66719e1a9527</td>
+      <td>f8c4ccc9-c76f-4521-8c6d-29d2f53b0cde</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC0_1_0</td>
+      <td>NaN</td>
+      <td>USACR</td>
+      <td>NaN</td>
+      <td>Native</td>
+      <td>2023-09-27T16:01:51.943Z</td>
+      <td>NaN</td>
+      <td>CONTINENT_DERIVED_FROM_COORDINATES</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>1065409370</td>
+      <td>7a25f7aa-03fb-4322-aaeb-66719e1a9527</td>
+      <td>ce36f65e-ddc4-45d3-97c5-f234a98fc63a</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1029,68 +1076,44 @@ memory usage: 58.7+ KB
       <td>...</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>CC_BY_4_0</td>
+      <td>CC0_1_0</td>
       <td>NaN</td>
+      <td>Ashcraft, G P</td>
       <td>NaN</td>
+      <td>Native</td>
+      <td>2023-09-27T16:01:46.022Z</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-24T03:32:37.674Z</td>
-      <td>StillImage</td>
-      <td>GEODETIC_DATUM_ASSUMED_WGS84;RECORDED_DATE_INV...</td>
+      <td>COORDINATE_REPROJECTED;CONTINENT_DERIVED_FROM_...</td>
     </tr>
     <tr>
-      <th>146</th>
-      <td>45869665</td>
-      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
-      <td>urn:catalog:LSUMZ:Mammals:13378</td>
+      <th>238</th>
+      <td>1065381796</td>
+      <td>7a25f7aa-03fb-4322-aaeb-66719e1a9527</td>
+      <td>852a18e6-31bb-4d4f-b469-22fbe870476f</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus tigrinus</td>
+      <td>Puma</td>
+      <td>Puma concolor</td>
       <td>...</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>CC0_1_0</td>
       <td>NaN</td>
-      <td>Gardner, Alfred L.</td>
+      <td>Starrett, A</td>
       <td>NaN</td>
-      <td>NATIVE</td>
-      <td>2021-09-24T06:03:59.587Z</td>
+      <td>Native</td>
+      <td>2023-09-27T16:02:15.389Z</td>
       <td>NaN</td>
-      <td>INSTITUTION_COLLECTION_MISMATCH</td>
+      <td>COORDINATE_REPROJECTED;CONTINENT_DERIVED_FROM_...</td>
     </tr>
     <tr>
-      <th>147</th>
-      <td>45869664</td>
-      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
-      <td>urn:catalog:LSUMZ:Mammals:13377</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus tigrinus</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>CC0_1_0</td>
-      <td>NaN</td>
-      <td>Gardner, Alfred L.</td>
-      <td>NaN</td>
-      <td>NATIVE</td>
-      <td>2021-09-24T06:03:59.587Z</td>
-      <td>NaN</td>
-      <td>INSTITUTION_COLLECTION_MISMATCH</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>45869301</td>
-      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
-      <td>urn:catalog:LSUMZ:Mammals:10219</td>
+      <th>239</th>
+      <td>1065369705</td>
+      <td>7a25f7aa-03fb-4322-aaeb-66719e1a9527</td>
+      <td>655d8c87-8055-4ac6-a737-c87bb0c2e875</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1103,36 +1126,12 @@ memory usage: 58.7+ KB
       <td>NaN</td>
       <td>CC0_1_0</td>
       <td>NaN</td>
-      <td>Arnold, Keith A.</td>
+      <td>USACR</td>
       <td>NaN</td>
-      <td>NATIVE</td>
-      <td>2021-09-24T06:03:59.952Z</td>
+      <td>Native</td>
+      <td>2023-09-27T16:01:28.386Z</td>
       <td>NaN</td>
-      <td>INSTITUTION_COLLECTION_MISMATCH</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>45869265</td>
-      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
-      <td>urn:catalog:LSUMZ:Mammals:9289</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus pardalis</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>CC0_1_0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NATIVE</td>
-      <td>2021-09-24T06:03:59.933Z</td>
-      <td>NaN</td>
-      <td>INSTITUTION_COLLECTION_MISMATCH</td>
+      <td>CONTINENT_DERIVED_FROM_COORDINATES</td>
     </tr>
   </tbody>
 </table>
@@ -1142,7 +1141,7 @@ memory usage: 58.7+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5 registros seleccionados aleatoriamente</span>
-<span class="n">felinos</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">felidos</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1190,34 +1189,10 @@ memory usage: 58.7+ KB
   </thead>
   <tbody>
     <tr>
-      <th>48</th>
-      <td>2838312987</td>
-      <td>8a863029-f435-446a-821e-275f4f641165</td>
-      <td>https://observation.org/observation/182443802</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Stichting Natuurinformatie</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T16:59:50.354Z</td>
-      <td>NaN</td>
-      <td>OCCURRENCE_STATUS_INFERRED_FROM_INDIVIDUAL_COUNT</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>3113421844</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/78541978</td>
+      <th>239</th>
+      <td>1065369705</td>
+      <td>7a25f7aa-03fb-4322-aaeb-66719e1a9527</td>
+      <td>655d8c87-8055-4ac6-a737-c87bb0c2e875</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1226,88 +1201,112 @@ memory usage: 58.7+ KB
       <td>Leopardus</td>
       <td>Leopardus pardalis</td>
       <td>...</td>
-      <td>Jairo Moya Vargas</td>
-      <td>2021-05-13T04:10:12</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Jairo Moya Vargas</td>
-      <td>Jairo Moya Vargas</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:25:31.099Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>CC0_1_0</td>
+      <td>NaN</td>
+      <td>USACR</td>
+      <td>NaN</td>
+      <td>Native</td>
+      <td>2023-09-27T16:01:28.386Z</td>
+      <td>NaN</td>
+      <td>CONTINENT_DERIVED_FROM_COORDINATES</td>
     </tr>
     <tr>
-      <th>17</th>
-      <td>3031700803</td>
+      <th>230</th>
+      <td>1291166642</td>
       <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/68067200</td>
+      <td>http://www.inaturalist.org/observations/630251</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
       <td>...</td>
-      <td>Marian Paniagua</td>
-      <td>2021-01-14T20:04:58</td>
+      <td>Esmeralda Arevalo Huezo</td>
+      <td>2014-04-18T17:05:51</td>
       <td>CC_BY_NC_4_0</td>
-      <td>Marian Paniagua</td>
-      <td>Marian Paniagua</td>
+      <td>Esmeralda Arevalo Huezo</td>
+      <td>Esmeralda Arevalo Huezo</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:14:47.597Z</td>
+      <td>2023-09-28T12:34:44.651Z</td>
       <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
     </tr>
     <tr>
-      <th>45</th>
-      <td>2840159806</td>
-      <td>8a863029-f435-446a-821e-275f4f641165</td>
-      <td>https://observation.org/observation/148370214</td>
+      <th>132</th>
+      <td>2992845866</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/65864190</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>caiman90</td>
+      <td>2020-11-30T10:21:25</td>
       <td>CC_BY_NC_4_0</td>
-      <td>Stichting Natuurinformatie</td>
+      <td>Caminos Amigables con Felinos-Panthera</td>
+      <td>Caminos Amigables con Felinos-Panthera</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T16:57:15.651Z</td>
+      <td>2023-09-28T13:04:12.630Z</td>
       <td>StillImage</td>
-      <td>COORDINATE_ROUNDED;OCCURRENCE_STATUS_INFERRED_...</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
     </tr>
     <tr>
-      <th>42</th>
-      <td>2843027780</td>
-      <td>8a863029-f435-446a-821e-275f4f641165</td>
-      <td>https://observation.org/observation/185122028</td>
+      <th>27</th>
+      <td>4175829179</td>
+      <td>6ac3f774-d9fb-4796-b3e9-92bf6c81c084</td>
+      <td>NaN</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
       <td>...</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>NaN</td>
+      <td>177731058</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-02T16:27:50.462Z</td>
+      <td>NaN</td>
+      <td>COORDINATE_ROUNDED;GEODETIC_DATUM_ASSUMED_WGS8...</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>4153859941</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/17111...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
+      <td>...</td>
+      <td>tblakehudson</td>
+      <td>2023-07-04T23:34:19</td>
       <td>CC_BY_NC_4_0</td>
-      <td>Stichting Natuurinformatie</td>
+      <td>tblakehudson</td>
+      <td>tblakehudson</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T17:00:00.173Z</td>
+      <td>2023-09-28T12:28:01.624Z</td>
       <td>StillImage</td>
-      <td>COORDINATE_ROUNDED;OCCURRENCE_STATUS_INFERRED_...</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
     </tr>
   </tbody>
 </table>
@@ -1317,7 +1316,7 @@ memory usage: 58.7+ KB
 <p>Los contenidos de un data frame también pueden desplegarse al escribir su nombre en la consola de Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">felinos</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">felidos</span>
 </pre></div>
 </div>
 </div>
@@ -1366,105 +1365,81 @@ memory usage: 58.7+ KB
   <tbody>
     <tr>
       <th>0</th>
-      <td>3337559907</td>
+      <td>891041333</td>
       <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/90794984</td>
+      <td>http://www.inaturalist.org/observations/519142</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
       <td>...</td>
-      <td>Marvin López M.</td>
-      <td>2021-08-11T17:02:57</td>
+      <td>canopalma</td>
+      <td>2014-02-03T15:52:21</td>
       <td>CC_BY_NC_4_0</td>
-      <td>Marvin López M.</td>
-      <td>Marvin López M.</td>
+      <td>canopalma</td>
+      <td>canopalma</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:26:16.096Z</td>
+      <td>2023-09-28T11:04:07.725Z</td>
       <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>CONTINENT_DERIVED_FROM_COORDINATES;TAXON_MATCH...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3333401669</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/88270427</td>
+      <td>865739381</td>
+      <td>5a659248-1f70-11e3-b2c5-00145eb45e9a</td>
+      <td>NaN</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
       <td>...</td>
-      <td>Tiziano Luka Pesci Rubilar</td>
-      <td>2021-07-23T17:52:04</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>CC_BY_NC_4_0</td>
-      <td>Rebeca Quirós</td>
-      <td>Rebeca Quirós</td>
+      <td>NaN</td>
+      <td>Ch. d’Eternod</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:15:51.507Z</td>
+      <td>2023-09-07T05:24:57.940Z</td>
       <td>NaN</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;CONTINENT_DERIVED...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3325502794</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/85490861</td>
+      <td>686473093</td>
+      <td>1d04e739-98a9-4e16-9970-8f8f3bf9e9e3</td>
+      <td>8f84e97e-1ed8-11e3-bfac-90b11c41863e</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus pardalis</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
       <td>...</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>2021-07-03T16:59:46</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>Sofía Pastor Parajeles</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T20:59:21.345Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>CC_BY_4_0</td>
+      <td>NaN</td>
+      <td>NONE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-27T15:55:14.109Z</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3314547422</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/84224884</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus pardalis</td>
-      <td>...</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>2021-06-23T20:39:47</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>Sofía Pastor Parajeles</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:25:26.648Z</td>
-      <td>StillImage</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>3307298689</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/82810053</td>
+      <td>686389681</td>
+      <td>1d04e739-98a9-4e16-9970-8f8f3bf9e9e3</td>
+      <td>8b908ce8-1ed8-11e3-bfac-90b11c41863e</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1473,16 +1448,40 @@ memory usage: 58.7+ KB
       <td>Leopardus</td>
       <td>Leopardus wiedii</td>
       <td>...</td>
-      <td>David</td>
-      <td>2021-06-13T09:10:50</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>NaN</td>
+      <td>WILLE A &amp; DALY H V</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-27T15:55:25.123Z</td>
+      <td>NaN</td>
+      <td>COORDINATE_REPROJECTED</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>476877127</td>
+      <td>4bfac3ea-8763-4f4b-a71a-76a6f5f243d3</td>
+      <td>MCZ:Mamm:5720</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
+      <td>...</td>
+      <td>[no agent data]</td>
+      <td>NaN</td>
       <td>CC_BY_NC_4_0</td>
-      <td>David</td>
-      <td>David</td>
+      <td>President and Fellows of Harvard College</td>
+      <td>William More Gabb</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:25:57.478Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>2023-09-28T09:11:34.273Z</td>
+      <td>NaN</td>
+      <td>INSTITUTION_MATCH_FUZZY;COLLECTION_MATCH_FUZZY</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1509,10 +1508,58 @@ memory usage: 58.7+ KB
       <td>...</td>
     </tr>
     <tr>
-      <th>145</th>
-      <td>439779436</td>
-      <td>7e2989f0-f762-11e1-a439-00145eb45e9a</td>
+      <th>235</th>
+      <td>1099959663</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>http://www.inaturalist.org/observations/1579688</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Leopardus</td>
+      <td>Leopardus wiedii</td>
+      <td>...</td>
+      <td>Paul Cools</td>
+      <td>2015-06-02T21:02:44</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>Paul Cools</td>
+      <td>Paul Cools</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T12:35:00.972Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>1065425532</td>
+      <td>7a25f7aa-03fb-4322-aaeb-66719e1a9527</td>
+      <td>f8c4ccc9-c76f-4521-8c6d-29d2f53b0cde</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Leopardus</td>
+      <td>Leopardus pardalis</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC0_1_0</td>
+      <td>NaN</td>
+      <td>USACR</td>
+      <td>NaN</td>
+      <td>Native</td>
+      <td>2023-09-27T16:01:51.943Z</td>
+      <td>NaN</td>
+      <td>CONTINENT_DERIVED_FROM_COORDINATES</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>1065409370</td>
+      <td>7a25f7aa-03fb-4322-aaeb-66719e1a9527</td>
+      <td>ce36f65e-ddc4-45d3-97c5-f234a98fc63a</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1523,68 +1570,44 @@ memory usage: 58.7+ KB
       <td>...</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>CC_BY_4_0</td>
+      <td>CC0_1_0</td>
       <td>NaN</td>
+      <td>Ashcraft, G P</td>
       <td>NaN</td>
+      <td>Native</td>
+      <td>2023-09-27T16:01:46.022Z</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-24T03:32:37.674Z</td>
-      <td>StillImage</td>
-      <td>GEODETIC_DATUM_ASSUMED_WGS84;RECORDED_DATE_INV...</td>
+      <td>COORDINATE_REPROJECTED;CONTINENT_DERIVED_FROM_...</td>
     </tr>
     <tr>
-      <th>146</th>
-      <td>45869665</td>
-      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
-      <td>urn:catalog:LSUMZ:Mammals:13378</td>
+      <th>238</th>
+      <td>1065381796</td>
+      <td>7a25f7aa-03fb-4322-aaeb-66719e1a9527</td>
+      <td>852a18e6-31bb-4d4f-b469-22fbe870476f</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
       <td>Carnivora</td>
       <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus tigrinus</td>
+      <td>Puma</td>
+      <td>Puma concolor</td>
       <td>...</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>CC0_1_0</td>
       <td>NaN</td>
-      <td>Gardner, Alfred L.</td>
+      <td>Starrett, A</td>
       <td>NaN</td>
-      <td>NATIVE</td>
-      <td>2021-09-24T06:03:59.587Z</td>
+      <td>Native</td>
+      <td>2023-09-27T16:02:15.389Z</td>
       <td>NaN</td>
-      <td>INSTITUTION_COLLECTION_MISMATCH</td>
+      <td>COORDINATE_REPROJECTED;CONTINENT_DERIVED_FROM_...</td>
     </tr>
     <tr>
-      <th>147</th>
-      <td>45869664</td>
-      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
-      <td>urn:catalog:LSUMZ:Mammals:13377</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus tigrinus</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>CC0_1_0</td>
-      <td>NaN</td>
-      <td>Gardner, Alfred L.</td>
-      <td>NaN</td>
-      <td>NATIVE</td>
-      <td>2021-09-24T06:03:59.587Z</td>
-      <td>NaN</td>
-      <td>INSTITUTION_COLLECTION_MISMATCH</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>45869301</td>
-      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
-      <td>urn:catalog:LSUMZ:Mammals:10219</td>
+      <th>239</th>
+      <td>1065369705</td>
+      <td>7a25f7aa-03fb-4322-aaeb-66719e1a9527</td>
+      <td>655d8c87-8055-4ac6-a737-c87bb0c2e875</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1597,40 +1620,16 @@ memory usage: 58.7+ KB
       <td>NaN</td>
       <td>CC0_1_0</td>
       <td>NaN</td>
-      <td>Arnold, Keith A.</td>
+      <td>USACR</td>
       <td>NaN</td>
-      <td>NATIVE</td>
-      <td>2021-09-24T06:03:59.952Z</td>
+      <td>Native</td>
+      <td>2023-09-27T16:01:28.386Z</td>
       <td>NaN</td>
-      <td>INSTITUTION_COLLECTION_MISMATCH</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>45869265</td>
-      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
-      <td>urn:catalog:LSUMZ:Mammals:9289</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Leopardus</td>
-      <td>Leopardus pardalis</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>CC0_1_0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NATIVE</td>
-      <td>2021-09-24T06:03:59.933Z</td>
-      <td>NaN</td>
-      <td>INSTITUTION_COLLECTION_MISMATCH</td>
+      <td>CONTINENT_DERIVED_FROM_COORDINATES</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 50 columns</p>
+<p>240 rows × 50 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1641,7 +1640,7 @@ memory usage: 58.7+ KB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Despliegue de las columnas con el nombre científico, la especie, la fecha, el año, el mes y el día</span>
 
-<span class="n">felinos</span><span class="p">[[</span><span class="s2">&quot;scientificName&quot;</span><span class="p">,</span> <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;eventDate&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">]]</span>
+<span class="n">felidos</span><span class="p">[[</span><span class="s2">&quot;scientificName&quot;</span><span class="p">,</span> <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="s2">&quot;eventDate&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1675,48 +1674,48 @@ memory usage: 58.7+ KB
   <tbody>
     <tr>
       <th>0</th>
-      <td>Puma concolor (Linnaeus, 1771)</td>
-      <td>Puma concolor</td>
-      <td>2021-08-11T10:22:36</td>
-      <td>2021.0</td>
-      <td>8.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Puma concolor (Linnaeus, 1771)</td>
-      <td>Puma concolor</td>
-      <td>2021-07-15T16:22:29</td>
-      <td>2021.0</td>
-      <td>7.0</td>
-      <td>15.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>Leopardus pardalis (Linnaeus, 1758)</td>
       <td>Leopardus pardalis</td>
-      <td>2021-07-01T19:28:25</td>
-      <td>2021.0</td>
-      <td>7.0</td>
+      <td>2014-02-01T00:00:00</td>
+      <td>2014.0</td>
+      <td>2.0</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>Leopardus pardalis (Linnaeus, 1758)</td>
-      <td>Leopardus pardalis</td>
-      <td>2021-06-23T10:55:00</td>
-      <td>2021.0</td>
+      <th>1</th>
+      <td>Panthera onca (Linnaeus, 1758)</td>
+      <td>Panthera onca</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Panthera onca centralis (Mearns, 1901)</td>
+      <td>Panthera onca</td>
+      <td>1993-06-10T00:00:00</td>
+      <td>1993.0</td>
       <td>6.0</td>
-      <td>23.0</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Leopardus wiedii nicaraguae (J.A.Allen, 1919)</td>
+      <td>Leopardus wiedii</td>
+      <td>1954-03-12T00:00:00</td>
+      <td>1954.0</td>
+      <td>3.0</td>
+      <td>12.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Leopardus wiedii (Schinz, 1821)</td>
-      <td>Leopardus wiedii</td>
-      <td>2015-12-05T14:41:42</td>
-      <td>2015.0</td>
-      <td>12.0</td>
-      <td>5.0</td>
+      <td>Felis pardalis mearnsi J.A.Allen, 1904</td>
+      <td>Leopardus pardalis</td>
+      <td>1839-01-01T00:00:00</td>
+      <td>1839.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1728,53 +1727,53 @@ memory usage: 58.7+ KB
       <td>...</td>
     </tr>
     <tr>
-      <th>145</th>
-      <td>Puma concolor (Linnaeus, 1771)</td>
-      <td>Puma concolor</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>Leopardus tigrinus (Schreber, 1775)</td>
-      <td>Leopardus tigrinus</td>
-      <td>1967-05-15T00:00:00</td>
-      <td>1967.0</td>
-      <td>5.0</td>
-      <td>15.0</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>Leopardus tigrinus (Schreber, 1775)</td>
-      <td>Leopardus tigrinus</td>
-      <td>1967-02-01T00:00:00</td>
-      <td>1967.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>Leopardus pardalis (Linnaeus, 1758)</td>
-      <td>Leopardus pardalis</td>
-      <td>1965-06-28T00:00:00</td>
-      <td>1965.0</td>
-      <td>6.0</td>
-      <td>28.0</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>Leopardus pardalis (Linnaeus, 1758)</td>
-      <td>Leopardus pardalis</td>
-      <td>1963-02-03T00:00:00</td>
-      <td>1963.0</td>
-      <td>2.0</td>
+      <th>235</th>
+      <td>Leopardus wiedii (Schinz, 1821)</td>
+      <td>Leopardus wiedii</td>
+      <td>2015-03-02T13:02:01</td>
+      <td>2015.0</td>
       <td>3.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>Leopardus pardalis (Linnaeus, 1758)</td>
+      <td>Leopardus pardalis</td>
+      <td>1963-04-30T00:00:00</td>
+      <td>1963.0</td>
+      <td>4.0</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>Puma concolor costaricensis (Merriam, 1901)</td>
+      <td>Puma concolor</td>
+      <td>1939-03-25T00:00:00</td>
+      <td>1939.0</td>
+      <td>3.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>Puma concolor costaricensis (Merriam, 1901)</td>
+      <td>Puma concolor</td>
+      <td>1970-08-05T00:00:00</td>
+      <td>1970.0</td>
+      <td>8.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>Leopardus pardalis (Linnaeus, 1758)</td>
+      <td>Leopardus pardalis</td>
+      <td>1964-10-06T00:00:00</td>
+      <td>1964.0</td>
+      <td>10.0</td>
+      <td>6.0</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 6 columns</p>
+<p>240 rows × 6 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1783,7 +1782,7 @@ memory usage: 58.7+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Selección de filas correspondientes a jaguares (*Panthera onca*)</span>
-<span class="n">jaguares</span> <span class="o">=</span> <span class="n">felinos</span><span class="p">[</span><span class="n">felinos</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Panthera onca&quot;</span><span class="p">]</span>
+<span class="n">jaguares</span> <span class="o">=</span> <span class="n">felidos</span><span class="p">[</span><span class="n">felidos</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Panthera onca&quot;</span><span class="p">]</span>
 
 <span class="c1"># Despliegue de los primeros registros</span>
 <span class="n">jaguares</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1834,10 +1833,10 @@ memory usage: 58.7+ KB
   </thead>
   <tbody>
     <tr>
-      <th>21</th>
-      <td>3008449314</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/15270189</td>
+      <th>1</th>
+      <td>865739381</td>
+      <td>5a659248-1f70-11e3-b2c5-00145eb45e9a</td>
+      <td>NaN</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1846,46 +1845,22 @@ memory usage: 58.7+ KB
       <td>Panthera</td>
       <td>Panthera onca</td>
       <td>...</td>
-      <td>mike_cove</td>
-      <td>2018-08-09T20:10:35</td>
-      <td>CC0_1_0</td>
-      <td>mike_cove</td>
-      <td>mike_cove</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T20:57:45.632Z</td>
-      <td>NaN</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>2860189171</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/58257138</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Panthera</td>
-      <td>Panthera onca</td>
-      <td>...</td>
-      <td>Kate Rothra Fleming</td>
-      <td>2020-09-01T16:56:35</td>
       <td>CC_BY_NC_4_0</td>
-      <td>Kate Rothra Fleming</td>
-      <td>Kate Rothra Fleming</td>
+      <td>NaN</td>
+      <td>Ch. d’Eternod</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T21:14:12.219Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>2023-09-07T05:24:57.940Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;CONTINENT_DERIVED...</td>
     </tr>
     <tr>
-      <th>38</th>
-      <td>2850700339</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/55493722</td>
+      <th>2</th>
+      <td>686473093</td>
+      <td>1d04e739-98a9-4e16-9970-8f8f3bf9e9e3</td>
+      <td>8f84e97e-1ed8-11e3-bfac-90b11c41863e</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -1894,64 +1869,88 @@ memory usage: 58.7+ KB
       <td>Panthera</td>
       <td>Panthera onca</td>
       <td>...</td>
-      <td>Osa Conservation</td>
-      <td>2020-08-05T14:47:40</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Osa Conservation</td>
-      <td>Osa Conservation</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:08:25.102Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>2802770349</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/15255648</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Panthera</td>
-      <td>Panthera onca</td>
-      <td>...</td>
-      <td>James Telford</td>
-      <td>2018-08-09T07:22:08</td>
-      <td>CC_BY_4_0</td>
-      <td>James Telford</td>
-      <td>James Telford</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T20:58:14.603Z</td>
-      <td>NaN</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>61</th>
-      <td>2629043484</td>
-      <td>09d2da7b-4699-4e45-b0da-73c982660c98</td>
-      <td>urn:catalog:KU:KUM:145971:08353198cc55c65471bf...</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Panthera</td>
-      <td>Panthera onca</td>
-      <td>...</td>
-      <td>Consuelo Lorenzo &amp; Jorge Bolaños</td>
       <td>NaN</td>
       <td>CC_BY_4_0</td>
-      <td>Comisión Nacional para el Conocimiento y Uso d...</td>
-      <td>NO DISPONIBLE</td>
+      <td>NaN</td>
+      <td>NONE</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T18:42:40.301Z</td>
+      <td>2023-09-27T15:55:14.109Z</td>
       <td>NaN</td>
-      <td>TYPE_STATUS_INVALID;OCCURRENCE_STATUS_INFERRED...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>4171286329</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/61603132</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
+      <td>...</td>
+      <td>Jaime Marcelo Aranda Sánchez</td>
+      <td>2020-10-03T23:25:53</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>Julio Barquero Elizondo</td>
+      <td>Julio Barquero Elizondo</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T11:38:24.349Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>4153929710</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/17156...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
+      <td>...</td>
+      <td>mathieu_fr</td>
+      <td>2023-07-07T15:16:02</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>mathieu_fr</td>
+      <td>mathieu_fr</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T13:59:24.290Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>4153859941</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/17111...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
+      <td>...</td>
+      <td>tblakehudson</td>
+      <td>2023-07-04T23:34:19</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>tblakehudson</td>
+      <td>tblakehudson</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T12:28:01.624Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
     </tr>
   </tbody>
 </table>
@@ -1961,7 +1960,7 @@ memory usage: 58.7+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Selección de filas correspondientes a jaguares (*Panthera onca*) o pumas (*Puma concolor*)</span>
-<span class="n">jaguares_pumas</span> <span class="o">=</span> <span class="n">felinos</span><span class="p">[(</span><span class="n">felinos</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Panthera onca&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">felinos</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Puma concolor&quot;</span><span class="p">)]</span>
+<span class="n">jaguares_pumas</span> <span class="o">=</span> <span class="n">felidos</span><span class="p">[(</span><span class="n">felidos</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Panthera onca&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">felidos</span><span class="p">[</span><span class="s2">&quot;species&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Puma concolor&quot;</span><span class="p">)]</span>
 
 <span class="c1"># Despliegue de los primeros registros</span>
 <span class="n">jaguares_pumas</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -2012,226 +2011,10 @@ memory usage: 58.7+ KB
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>3337559907</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/90794984</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>Marvin López M.</td>
-      <td>2021-08-11T17:02:57</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Marvin López M.</td>
-      <td>Marvin López M.</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:26:16.096Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
       <th>1</th>
-      <td>3333401669</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/88270427</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>Tiziano Luka Pesci Rubilar</td>
-      <td>2021-07-23T17:52:04</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Rebeca Quirós</td>
-      <td>Rebeca Quirós</td>
+      <td>865739381</td>
+      <td>5a659248-1f70-11e3-b2c5-00145eb45e9a</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:15:51.507Z</td>
-      <td>NaN</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>3302057398</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/81502744</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>Michelle Monge-Velazquez</td>
-      <td>2021-06-04T00:10:47</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Michelle Monge-Velazquez</td>
-      <td>Michelle Monge-Velazquez</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:15:55.933Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>3097275563</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/73407648</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>Jaime Marcelo Aranda Sánchez</td>
-      <td>2021-04-09T22:42:23</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>nubegris</td>
-      <td>nubegris</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:15:03.814Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>3079910798</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/73053113</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>gernotkunz</td>
-      <td>2021-04-05T21:48:18</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>gernotkunz</td>
-      <td>gernotkunz</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:24:37.211Z</td>
-      <td>NaN</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>3079872785</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/73053107</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>gernotkunz</td>
-      <td>2021-04-05T21:48:17</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>gernotkunz</td>
-      <td>gernotkunz</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:23:35.478Z</td>
-      <td>NaN</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>3067612232</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/66718421</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>Jeff Mollenhauer</td>
-      <td>2020-12-18T01:09:50</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Jeff Mollenhauer</td>
-      <td>Jeff Mollenhauer</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:09:44.468Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>3031700803</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/68067200</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>Marian Paniagua</td>
-      <td>2021-01-14T20:04:58</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Marian Paniagua</td>
-      <td>Marian Paniagua</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:14:47.597Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>3008566753</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/66811638</td>
-      <td>Animalia</td>
-      <td>Chordata</td>
-      <td>Mammalia</td>
-      <td>Carnivora</td>
-      <td>Felidae</td>
-      <td>Puma</td>
-      <td>Puma concolor</td>
-      <td>...</td>
-      <td>jayras</td>
-      <td>2020-12-20T05:44:17</td>
-      <td>CC_BY_NC_4_0</td>
-      <td>Pacho Gutierrez</td>
-      <td>Pacho Gutierrez</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2021-09-23T21:14:42.430Z</td>
-      <td>StillImage</td>
-      <td>COORDINATE_ROUNDED</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>3008449314</td>
-      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
-      <td>https://www.inaturalist.org/observations/15270189</td>
       <td>Animalia</td>
       <td>Chordata</td>
       <td>Mammalia</td>
@@ -2240,16 +2023,232 @@ memory usage: 58.7+ KB
       <td>Panthera</td>
       <td>Panthera onca</td>
       <td>...</td>
-      <td>mike_cove</td>
-      <td>2018-08-09T20:10:35</td>
-      <td>CC0_1_0</td>
-      <td>mike_cove</td>
-      <td>mike_cove</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2021-09-23T20:57:45.632Z</td>
+      <td>CC_BY_NC_4_0</td>
       <td>NaN</td>
-      <td>COORDINATE_ROUNDED</td>
+      <td>Ch. d’Eternod</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-07T05:24:57.940Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;CONTINENT_DERIVED...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>686473093</td>
+      <td>1d04e739-98a9-4e16-9970-8f8f3bf9e9e3</td>
+      <td>8f84e97e-1ed8-11e3-bfac-90b11c41863e</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>NaN</td>
+      <td>NONE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-27T15:55:14.109Z</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4413373003</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/17394...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Puma</td>
+      <td>Puma concolor</td>
+      <td>...</td>
+      <td>Roberto R. Calderón</td>
+      <td>2023-08-19T01:20:33</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>elliehawcutt</td>
+      <td>elliehawcutt</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T14:01:11.503Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>439779436</td>
+      <td>7e2989f0-f762-11e1-a439-00145eb45e9a</td>
+      <td>NaN</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Puma</td>
+      <td>Puma concolor</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T05:11:25.145Z</td>
+      <td>StillImage</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;CONTINENT_DERIVED...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>4177109271</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/17752...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Puma</td>
+      <td>Puma concolor</td>
+      <td>...</td>
+      <td>Gabriel</td>
+      <td>2023-08-09T16:21:16</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>Gabriel</td>
+      <td>Gabriel</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T14:09:23.399Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>4171286329</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/61603132</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
+      <td>...</td>
+      <td>Jaime Marcelo Aranda Sánchez</td>
+      <td>2020-10-03T23:25:53</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>Julio Barquero Elizondo</td>
+      <td>Julio Barquero Elizondo</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T11:38:24.349Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>4153929710</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/17156...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
+      <td>...</td>
+      <td>mathieu_fr</td>
+      <td>2023-07-07T15:16:02</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>mathieu_fr</td>
+      <td>mathieu_fr</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T13:59:24.290Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>4153859941</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/17111...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
+      <td>...</td>
+      <td>tblakehudson</td>
+      <td>2023-07-04T23:34:19</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>tblakehudson</td>
+      <td>tblakehudson</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T12:28:01.624Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>4138179870</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/16855...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Panthera</td>
+      <td>Panthera onca</td>
+      <td>...</td>
+      <td>Michelle Monge-Velazquez</td>
+      <td>2023-06-20T21:54:33</td>
+      <td>CC_BY_4_0</td>
+      <td>Michelle Monge-Velazquez</td>
+      <td>Michelle Monge-Velazquez</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T12:26:39.208Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>4134168570</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/16693...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Carnivora</td>
+      <td>Felidae</td>
+      <td>Puma</td>
+      <td>Puma concolor</td>
+      <td>...</td>
+      <td>treerescie</td>
+      <td>2023-06-12T04:29:04</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>treerescie</td>
+      <td>treerescie</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2023-09-28T12:25:51.867Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED;CONTINENT_DERIVED_FROM_COOR...</td>
     </tr>
   </tbody>
 </table>
@@ -2267,20 +2266,7 @@ memory usage: 58.7+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># biblioteca de graficación</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-
 <span class="kn">import</span> <span class="nn">calendar</span> <span class="c1"># biblioteca para manejo de fechas</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="estilo-de-los-graficos">
-<h4>Estilo de los gráficos<a class="headerlink" href="#estilo-de-los-graficos" title="Permalink to this heading">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estilo de los gráficos</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2293,12 +2279,12 @@ memory usage: 58.7+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cambio del tipo de datos del campo de fecha</span>
-<span class="n">felinos</span><span class="p">[</span><span class="s2">&quot;eventDate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">felinos</span><span class="p">[</span><span class="s2">&quot;eventDate&quot;</span><span class="p">])</span>
+<span class="n">felidos</span><span class="p">[</span><span class="s2">&quot;eventDate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">felidos</span><span class="p">[</span><span class="s2">&quot;eventDate&quot;</span><span class="p">])</span>
 
 <span class="c1"># Agrupación de los registros por año</span>
-<span class="n">felinos_registros_x_anio</span> <span class="o">=</span> <span class="n">felinos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">felinos</span><span class="p">[</span><span class="s1">&#39;eventDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">eventDate</span>
+<span class="n">felidos_registros_x_anio</span> <span class="o">=</span> <span class="n">felidos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">felidos</span><span class="p">[</span><span class="s1">&#39;eventDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">eventDate</span>
 
-<span class="n">felinos_registros_x_anio</span>
+<span class="n">felidos_registros_x_anio</span>
 </pre></div>
 </div>
 </div>
@@ -2318,23 +2304,26 @@ memory usage: 58.7+ KB
 1967.0     2
 1970.0     1
 1993.0     2
-2002.0     1
+2002.0     2
+2003.0     1
 2005.0     1
 2007.0     1
 2008.0     1
-2009.0     6
+2009.0     7
 2010.0     3
-2011.0     2
+2011.0     3
 2012.0     6
-2013.0     6
-2014.0     3
+2013.0     7
+2014.0     4
 2015.0    10
-2016.0     8
+2016.0     9
 2017.0    15
-2018.0     4
-2019.0    20
-2020.0    23
-2021.0    12
+2018.0     6
+2019.0    22
+2020.0    25
+2021.0    26
+2022.0    34
+2023.0    29
 Name: eventDate, dtype: int64
 </pre></div>
 </div>
@@ -2343,7 +2332,7 @@ Name: eventDate, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tipo de datos retornado</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">felinos_registros_x_anio</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">felidos_registros_x_anio</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2356,37 +2345,220 @@ Name: eventDate, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conversión de series a dataframe</span>
-<span class="n">felinos_registros_x_anio_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;anio&#39;</span><span class="p">:</span><span class="n">felinos_registros_x_anio</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;registros&#39;</span><span class="p">:</span><span class="n">felinos_registros_x_anio</span><span class="o">.</span><span class="n">values</span><span class="p">})</span> 
+<span class="n">felidos_registros_x_anio_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;anio&#39;</span><span class="p">:</span><span class="n">felidos_registros_x_anio</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;registros&#39;</span><span class="p">:</span><span class="n">felidos_registros_x_anio</span><span class="o">.</span><span class="n">values</span><span class="p">})</span> 
 
 <span class="c1"># Conversión del tipo de la columna de año</span>
-<span class="n">felinos_registros_x_anio_df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">felinos_registros_x_anio_df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">],</span> <span class="n">downcast</span><span class="o">=</span><span class="s1">&#39;integer&#39;</span><span class="p">)</span>
-<span class="n">felinos_registros_x_anio_df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_precision</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">felidos_registros_x_anio_df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">felidos_registros_x_anio_df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">],</span> <span class="n">downcast</span><span class="o">=</span><span class="s1">&#39;integer&#39;</span><span class="p">)</span>
 
-<span class="n">felinos_registros_x_anio_df</span>
+<span class="n">felidos_registros_x_anio_df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Conversión del tipo de la columna de año</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">felinos_registros_x_anio_df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">felinos_registros_x_anio_df</span><span class="p">[</span><span class="s2">&quot;anio&quot;</span><span class="p">],</span> <span class="n">downcast</span><span class="o">=</span><span class="s1">&#39;integer&#39;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">felinos_registros_x_anio_df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_precision</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">felinos_registros_x_anio_df</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">AttributeError</span>: &#39;Styler&#39; object has no attribute &#39;set_precision&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>anio</th>
+      <th>registros</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1839</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1928</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1931</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1932</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1933</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1939</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1954</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1958</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1963</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1964</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1965</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1967</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1970</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1993</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2002</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2003</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2005</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2007</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2008</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2009</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2010</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2011</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2012</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2013</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2014</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2015</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2016</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>2017</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2018</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>2019</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>2020</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>2021</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>2022</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>2023</td>
+      <td>29</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Graficación</span>
-<span class="n">felinos_registros_x_anio_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;anio&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;registros&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">felidos_registros_x_anio_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;anio&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;registros&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 
 <span class="c1"># Título y leyendas en los ejes</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Registros de presencia de Felidae (felinos) en Costa Rica por año&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Registros de presencia de Felidae (félidos) en Costa Rica por año&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 </pre></div>
@@ -2396,7 +2568,7 @@ Name: eventDate, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Cantidad de registros&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/a3a2b1fffb8fba3f09287b0c8980e1a6e3f21ae98b638f1da35ad5a51fa94057.png" src="../../_images/a3a2b1fffb8fba3f09287b0c8980e1a6e3f21ae98b638f1da35ad5a51fa94057.png" />
+<img alt="../../_images/8ddf51946eb989de5ae53718dc429f144d7063251cbbf38578c0e3306a5880fa.png" src="../../_images/8ddf51946eb989de5ae53718dc429f144d7063251cbbf38578c0e3306a5880fa.png" />
 </div>
 </div>
 </section>
@@ -2405,26 +2577,26 @@ Name: eventDate, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agrupación de los registros por mes</span>
-<span class="n">felinos_registros_x_mes</span> <span class="o">=</span> <span class="n">felinos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">felinos</span><span class="p">[</span><span class="s1">&#39;eventDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">eventDate</span>
+<span class="n">felidos_registros_x_mes</span> <span class="o">=</span> <span class="n">felidos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">felidos</span><span class="p">[</span><span class="s1">&#39;eventDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">eventDate</span>
 
-<span class="n">felinos_registros_x_mes</span>
+<span class="n">felidos_registros_x_mes</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eventDate
-1.0     28
-2.0     15
-3.0     21
-4.0      8
-5.0      9
-6.0     15
-7.0     13
-8.0      9
-9.0      5
-10.0     8
-11.0     2
-12.0    15
+1.0     36
+2.0     23
+3.0     32
+4.0     19
+5.0     17
+6.0     20
+7.0     23
+8.0     15
+9.0     12
+10.0    12
+11.0     8
+12.0    21
 Name: eventDate, dtype: int64
 </pre></div>
 </div>
@@ -2433,25 +2605,53 @@ Name: eventDate, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reemplazo del número del mes por el nombre del mes</span>
-<span class="n">felinos_registros_x_mes</span><span class="o">.</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">calendar</span><span class="o">.</span><span class="n">month_name</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)]</span>
+<span class="n">felidos_registros_x_mes</span><span class="o">.</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">calendar</span><span class="o">.</span><span class="n">month_name</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)]</span>
 
-<span class="n">felinos_registros_x_mes</span>
+<span class="n">felidos_registros_x_mes</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>January      28
-February     15
-March        21
-April         8
-May           9
-June         15
-July         13
-August        9
-September     5
-October       8
-November      2
-December     15
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>January      36
+February     23
+March        32
+April        19
+May          17
+June         20
+July         23
+August       15
+September    12
+October      12
+November      8
+December     21
+Name: eventDate, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cambio de los nombres de los meses a español</span>
+<span class="n">nombres_meses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Enero&#39;</span><span class="p">,</span> <span class="s1">&#39;Febrero&#39;</span><span class="p">,</span> <span class="s1">&#39;Marzo&#39;</span><span class="p">,</span> <span class="s1">&#39;Abril&#39;</span><span class="p">,</span> <span class="s1">&#39;Mayo&#39;</span><span class="p">,</span> <span class="s1">&#39;Junio&#39;</span><span class="p">,</span> <span class="s1">&#39;Julio&#39;</span><span class="p">,</span> <span class="s1">&#39;Agosto&#39;</span><span class="p">,</span> <span class="s1">&#39;Septiembre&#39;</span><span class="p">,</span> <span class="s1">&#39;Octubre&#39;</span><span class="p">,</span> <span class="s1">&#39;Noviembre&#39;</span><span class="p">,</span> <span class="s1">&#39;Diciembre&#39;</span><span class="p">]</span>
+<span class="n">felidos_registros_x_mes</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nombres_meses</span>
+
+<span class="n">felidos_registros_x_mes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enero         36
+Febrero       23
+Marzo         32
+Abril         19
+Mayo          17
+Junio         20
+Julio         23
+Agosto        15
+Septiembre    12
+Octubre       12
+Noviembre      8
+Diciembre     21
 Name: eventDate, dtype: int64
 </pre></div>
 </div>
@@ -2460,17 +2660,17 @@ Name: eventDate, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico de barras</span>
-<span class="n">felinos_registros_x_mes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">felidos_registros_x_mes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="c1"># Título y leyendas en los ejes</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Registros de presencia de Felidae (felinos) en Costa Rica por mes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Registros de presencia de Felidae (félidos) en Costa Rica por mes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Mes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9ab52b81511b3d30190f68807187a444b0a5990c371501b13399a2137575152b.png" src="../../_images/9ab52b81511b3d30190f68807187a444b0a5990c371501b13399a2137575152b.png" />
+<img alt="../../_images/60cb2b7747c5a0923dc281907b426ddda8897657f25fd37b87cb3707e6f99573.png" src="../../_images/60cb2b7747c5a0923dc281907b426ddda8897657f25fd37b87cb3707e6f99573.png" />
 </div>
 </div>
 </section>
@@ -2479,7 +2679,7 @@ Name: eventDate, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agrupación de los registros por fecha</span>
-<span class="n">registros_x_fecha</span> <span class="o">=</span> <span class="n">felinos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">felinos</span><span class="p">[</span><span class="s1">&#39;eventDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">eventDate</span>
+<span class="n">registros_x_fecha</span> <span class="o">=</span> <span class="n">felidos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">felidos</span><span class="p">[</span><span class="s1">&#39;eventDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">eventDate</span>
 
 <span class="n">registros_x_fecha</span>
 </pre></div>
@@ -2493,12 +2693,12 @@ Name: eventDate, dtype: int64
 1932-01-01    1
 1932-06-01    1
              ..
-2021-06-03    1
-2021-06-23    1
-2021-07-01    1
-2021-07-15    1
-2021-08-11    1
-Name: eventDate, Length: 135, dtype: int64
+2023-07-05    1
+2023-07-13    1
+2023-07-22    1
+2023-07-25    1
+2023-08-13    1
+Name: eventDate, Length: 216, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -2509,7 +2709,7 @@ Name: eventDate, Length: 135, dtype: int64
 <span class="n">registros_x_fecha</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 
 <span class="c1"># Título y leyendas en los ejes</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Registros de presencia de Felidae (felinos) en Costa Rica por fecha&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Registros de presencia de Felidae (félidos) en Costa Rica por fecha&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad de registros&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -2517,10 +2717,10 @@ Name: eventDate, Length: 135, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f12ccf371c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f023b239cd0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/c9218501401066be284fd00db5d79c608d57ea3a0336663c835fadd286a0c3f3.png" src="../../_images/c9218501401066be284fd00db5d79c608d57ea3a0336663c835fadd286a0c3f3.png" />
+<img alt="../../_images/b669cc656bec2c5e6e00ab9f28bcb423264b5d04a6882d572776f541b839585c.png" src="../../_images/b669cc656bec2c5e6e00ab9f28bcb423264b5d04a6882d572776f541b839585c.png" />
 </div>
 </div>
 </section>
@@ -2614,7 +2814,6 @@ Name: eventDate, Length: 135, dtype: int64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-de-analisis">Operaciones de análisis</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficacion">Graficación</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-bibliotecas">Carga de bibliotecas</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#estilo-de-los-graficos">Estilo de los gráficos</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-graficos">Ejemplos de gráficos</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-registros-de-presencia-por-ano">Distribución de registros de presencia por año</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#distribucion-de-registros-de-presencia-por-mes">Distribución de registros de presencia por mes</a></li>
