@@ -471,7 +471,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carga de módulos de matplotlib</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1">#%matplotlib inline</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -483,20 +483,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Carga de seaborn</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Carga de pandas</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="conjuntos-de-datos-para-pruebas">
@@ -504,6 +490,7 @@ document.write(`
 <section id="casos-de-covid-19-en-costa-rica">
 <h3>Casos de COVID-19 en Costa Rica<a class="headerlink" href="#casos-de-covid-19-en-costa-rica" title="Permalink to this heading">#</a></h3>
 <p>Estos datos son publicados por el Ministerio de Salud de Costa Rica en <a class="reference external" href="https://geovision.uned.ac.cr/oges/">https://geovision.uned.ac.cr/oges/</a>. Se distribuyen en archivos CSV, incluyendo un archivo de datos generales para todo el país y varios archivos con datos por cantón. La fecha de la última actualización es 2022-05-30.</p>
+<p>Los datos también están disponibles en <a class="github reference external" href="https://github.com/pf0907-programacionsig/2023-ii/tree/main/contenido/3/datos/ministerio-salud/covid">pf0907-programacionsig/2023-ii</a>.</p>
 <section id="datos-generales">
 <h4>Datos generales<a class="headerlink" href="#datos-generales" title="Permalink to this heading">#</a></h4>
 <section id="carga-de-datos">
@@ -1565,7 +1552,7 @@ memory usage: 532.3+ KB
 </section>
 <section id="pasajeros-del-titanic">
 <h3>Pasajeros del Titanic<a class="headerlink" href="#pasajeros-del-titanic" title="Permalink to this heading">#</a></h3>
-<p>Este es el conjunto de datos de entrenamiento de la competencia <a class="reference external" href="https://www.kaggle.com/c/titanic/overview">Titanic - Machine Learning from Disaster</a> organizada por <a class="reference external" href="https://www.kaggle.com/">Kaggle</a>. El archivo también está disponible en <a class="github reference external" href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/datos/entrenamiento.csv">pf3311-cienciadatosgeoespaciales/2021-iii</a>.</p>
+<p>Este es el conjunto de datos de entrenamiento de la competencia <a class="reference external" href="https://www.kaggle.com/c/titanic/overview">Titanic - Machine Learning from Disaster</a> organizada por <a class="reference external" href="https://www.kaggle.com/">Kaggle</a>. También está disponible en <a class="github reference external" href="https://github.com/pf0907-programacionsig/2023-ii/tree/main/contenido/3/datos/kaggle/titanic">pf0907-programacionsig/2023-ii</a>.</p>
 <section id="id2">
 <h4>Carga de datos<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
@@ -1813,7 +1800,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Frecuencia&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/44237f916ffe54ffbacc435f21fb3728ef0c9ade1241848a136029c066eb8e28.png" src="../../_images/44237f916ffe54ffbacc435f21fb3728ef0c9ade1241848a136029c066eb8e28.png" />
+<img alt="../../_images/b00b9fe46f0aeb3ba030dff7db8c4b31fc445051fdd92078a60849a78e7bd145.png" src="../../_images/b00b9fe46f0aeb3ba030dff7db8c4b31fc445051fdd92078a60849a78e7bd145.png" />
 </div>
 </div>
 <p>El método <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.histplot.html">seaborn.histplot()</a> permite crear histogramas con seaborn. El argumento <code class="docutils literal notranslate"><span class="pre">kde</span></code> se utiliza para añadir una estimación de densidad del kernel (<em>Kernel Density Estimation</em>, KDE), una curva que muestra la densidad de los datos.</p>
@@ -1833,7 +1820,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Frecuencia&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/7a617e55c0424645c0e6560a21c549708b229c292f40f3235378b8e8652f35ef.png" src="../../_images/7a617e55c0424645c0e6560a21c549708b229c292f40f3235378b8e8652f35ef.png" />
+<img alt="../../_images/4021ad44cea65dc0fb5739f7231dc5083d8225edfd10391c1ff43001b704798a.png" src="../../_images/4021ad44cea65dc0fb5739f7231dc5083d8225edfd10391c1ff43001b704798a.png" />
 </div>
 </div>
 <p>El argumento <code class="docutils literal notranslate"><span class="pre">hue</span></code> se usa para mostrar una división de cada <em>bin</em> de acuerdo con el valor de alguna columna.</p>
@@ -1857,7 +1844,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Frecuencia&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/fb13748a322266552f842562a4d06686a524ebee8428df7ac824a78249286342.png" src="../../_images/fb13748a322266552f842562a4d06686a524ebee8428df7ac824a78249286342.png" />
+<img alt="../../_images/e480d00ac9b0de0e80c27d7c96aa8ffee0540ff97638fe62f16657eba20521b0.png" src="../../_images/e480d00ac9b0de0e80c27d7c96aa8ffee0540ff97638fe62f16657eba20521b0.png" />
 </div>
 </div>
 <section id="ejercicios">
@@ -1892,7 +1879,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Casos&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/935d25cd61a760ac314c0b35974e87e85b6db5ad7069cb98d3bac76c4aff10d8.png" src="../../_images/935d25cd61a760ac314c0b35974e87e85b6db5ad7069cb98d3bac76c4aff10d8.png" />
+<img alt="../../_images/85b50fd9197f91bc3a1935b7b3e6806bc1c29ead49f1a9f07cdc1edd54001b20.png" src="../../_images/85b50fd9197f91bc3a1935b7b3e6806bc1c29ead49f1a9f07cdc1edd54001b20.png" />
 </div>
 </div>
 <p>El argumento <code class="docutils literal notranslate"><span class="pre">by</span></code> puede utilizarse para agrupar los datos por una variable adicional, como la provincia.</p>
@@ -1912,7 +1899,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Casos&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/652730468ef301b345bdc4a7da8aa4af934cca3b4e4f6c13302ba900dce3b750.png" src="../../_images/652730468ef301b345bdc4a7da8aa4af934cca3b4e4f6c13302ba900dce3b750.png" />
+<img alt="../../_images/f86f80b22b76da224afad8f21d396c50e50f668da06af766d13cb09a38cc8970.png" src="../../_images/f86f80b22b76da224afad8f21d396c50e50f668da06af766d13cb09a38cc8970.png" />
 </div>
 </div>
 <p>El método <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.boxplot.html">seaborn.boxplot()</a> permite crear gráficos de caja con seaborn.</p>
@@ -1933,7 +1920,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Casos&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/d1660c0213f9fb4cdffa1e2f57e787961c3a7cb87070aa7a808aae6e81b16981.png" src="../../_images/d1660c0213f9fb4cdffa1e2f57e787961c3a7cb87070aa7a808aae6e81b16981.png" />
+<img alt="../../_images/57ef0fbfcb1b96d7612c1ef904b994a17ec887270dd11cac14adbf3f29ae3838.png" src="../../_images/57ef0fbfcb1b96d7612c1ef904b994a17ec887270dd11cac14adbf3f29ae3838.png" />
 </div>
 </div>
 <section id="id3">
@@ -1975,7 +1962,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Casos&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/f36b3d39f975b6bf5a0eaa2bf17771b2525fab79b2a3d2fcbe9c290cd94b062a.png" src="../../_images/f36b3d39f975b6bf5a0eaa2bf17771b2525fab79b2a3d2fcbe9c290cd94b062a.png" />
+<img alt="../../_images/a200d1483232850b404eb4beb327dff1858fd3185ce4ec396a8b4da3086f2f63.png" src="../../_images/a200d1483232850b404eb4beb327dff1858fd3185ce4ec396a8b4da3086f2f63.png" />
 </div>
 </div>
 <p>El siguiente gráfico de barras horizontales muestra las cantidades de casos activos en los cantones de San José.</p>
@@ -2000,7 +1987,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Casos&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/0d52fa52acf749d1ee4724eeebf6914549ef084b8bb5249110452654f6e267a4.png" src="../../_images/0d52fa52acf749d1ee4724eeebf6914549ef084b8bb5249110452654f6e267a4.png" />
+<img alt="../../_images/f304e7666d191af43a11dad94b7cd1641cbfae773bf9c7dc0e1e350a967db7a7.png" src="../../_images/f304e7666d191af43a11dad94b7cd1641cbfae773bf9c7dc0e1e350a967db7a7.png" />
 </div>
 </div>
 <p>En el siguiente ejemplo, se utiliza el método <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html">pandas.DataFrame.groupby()</a> para agrupar los datos por provincia y sumar los casos positivos.</p>
@@ -2028,7 +2015,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Casos&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/dafcd719dfea5176ef158fc2ea4e495def5e3f81e1f183a84ee4bee62925393d.png" src="../../_images/dafcd719dfea5176ef158fc2ea4e495def5e3f81e1f183a84ee4bee62925393d.png" />
+<img alt="../../_images/898aa61665ce09505c6131d65f900635d28ba7e4cc9486d6cf244b3bfb29e1ed.png" src="../../_images/898aa61665ce09505c6131d65f900635d28ba7e4cc9486d6cf244b3bfb29e1ed.png" />
 </div>
 </div>
 <p>El método <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.barplot.html">seaborn.barplot()</a> permite crear gráficos de barras con seaborn.</p>
@@ -2048,7 +2035,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Proporción de sobrevivientes&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/22328a4a45cc856a33146ceec5c12f9d2ad16e03a51802d8cda062109074f236.png" src="../../_images/22328a4a45cc856a33146ceec5c12f9d2ad16e03a51802d8cda062109074f236.png" />
+<img alt="../../_images/604c6d89d8017f3f9e29a34c88b2064abfb51842024ae3c032d6e71123509147.png" src="../../_images/604c6d89d8017f3f9e29a34c88b2064abfb51842024ae3c032d6e71123509147.png" />
 </div>
 </div>
 <section id="id4">
@@ -2082,10 +2069,10 @@ memory usage: 532.3+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa94515a350&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fad52dda9d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/6a634c81220cde2650ebaedf282e5b10f0e55b7716d1d9fe39c10bdd93500a75.png" src="../../_images/6a634c81220cde2650ebaedf282e5b10f0e55b7716d1d9fe39c10bdd93500a75.png" />
+<img alt="../../_images/eeb8226dbaaf9ca2811a016ae5894174a597c7d9006bad3290bbf11b5f2e9a50.png" src="../../_images/eeb8226dbaaf9ca2811a016ae5894174a597c7d9006bad3290bbf11b5f2e9a50.png" />
 </div>
 </div>
 <p>Seaborn no cuenta con un método para dibujar gráficos de pastel. Sin embargo, para aprovechas las capacidades de esta biblioteca, puede crearse el gráfico con matplotlib y utilizar uno de los esquemas de colores de seaborn con el método <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.color_palette.html#seaborn.color_palette">seaborn.color_palette()</a>. Para más información sobre el manejo de colores en seaborn, puede consultar <a class="reference external" href="https://seaborn.pydata.org/tutorial/color_palettes.html">Choosing color palettes</a>.</p>
@@ -2119,10 +2106,10 @@ memory usage: 532.3+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa9451a6a70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fad52cf1450&gt;
 </pre></div>
 </div>
-<img alt="../../_images/b044a779d81bb0bbeee807c1103197017282447e50044914abd18f01af4225e2.png" src="../../_images/b044a779d81bb0bbeee807c1103197017282447e50044914abd18f01af4225e2.png" />
+<img alt="../../_images/d75ee02a34d72dadbfc21a857dae7c968dffe32dc01e6a704fcab41551f82148.png" src="../../_images/d75ee02a34d72dadbfc21a857dae7c968dffe32dc01e6a704fcab41551f82148.png" />
 </div>
 </div>
 <section id="id5">
@@ -2158,7 +2145,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Pacientes hospitalizados en UCI&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/e3a75357f31ba34d7e65c19f30e3bbcec94b594a4d0650fb1f44ae34bcd0e4f2.png" src="../../_images/e3a75357f31ba34d7e65c19f30e3bbcec94b594a4d0650fb1f44ae34bcd0e4f2.png" />
+<img alt="../../_images/e77f97e649c1f282761a81ba9db95e0e44012585b53006c90b4d702b38b36bd7.png" src="../../_images/e77f97e649c1f282761a81ba9db95e0e44012585b53006c90b4d702b38b36bd7.png" />
 </div>
 </div>
 <p>El método <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">seaborn.scatterplot()</a> permite crear gráficos de dispersión con seaborn.</p>
@@ -2178,7 +2165,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Pacientes hospitalizados en UCI&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/4e1b8325d439a0f6236f03f37883325b9ce9d3d25429fc49c42d7877a936171d.png" src="../../_images/4e1b8325d439a0f6236f03f37883325b9ce9d3d25429fc49c42d7877a936171d.png" />
+<img alt="../../_images/635641ee1c4eecbb4a0db4bd50533be7a0e1ebb73bb7183dff523a9397e687ab.png" src="../../_images/635641ee1c4eecbb4a0db4bd50533be7a0e1ebb73bb7183dff523a9397e687ab.png" />
 </div>
 </div>
 <p>El método <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.lmplot.html">seaborn.lmplot</a> grafica un modelo de regresión, que permite apreciar más fácilmente tendencias en los datos.</p>
@@ -2200,10 +2187,14 @@ memory usage: 532.3+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/mfvargas/miniconda3/envs/pf0907-2023-ii/lib/python3.11/site-packages/seaborn/axisgrid.py:123: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(41.124374999999986, 0.5, &#39;Pacientes hospitalizados en UCI&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/8b912ea62f1f9d919d2c498eddca3ec6b66fbf430053c54b06e84260c499cf59.png" src="../../_images/8b912ea62f1f9d919d2c498eddca3ec6b66fbf430053c54b06e84260c499cf59.png" />
+<img alt="../../_images/ec0483cf8b348407d0a8aa4fbf9be7595002e4ee55fb38b26cd9761337a3b882.png" src="../../_images/ec0483cf8b348407d0a8aa4fbf9be7595002e4ee55fb38b26cd9761337a3b882.png" />
 </div>
 </div>
 <section id="id6">
@@ -2233,7 +2224,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Casos positivos&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/adcc270dcc492436663f1b31c794062d50c3a228869e856a0d92a59817dfd215.png" src="../../_images/adcc270dcc492436663f1b31c794062d50c3a228869e856a0d92a59817dfd215.png" />
+<img alt="../../_images/2124a70589a2735e3100db323d832bcea86a938701aacdb43a81114567590618.png" src="../../_images/2124a70589a2735e3100db323d832bcea86a938701aacdb43a81114567590618.png" />
 </div>
 </div>
 <p>El siguiente gráfico le agrega al anterior las variables de casos activos, recuperados y fallecidos. También especifica un color para cada variable.</p>
@@ -2258,7 +2249,7 @@ memory usage: 532.3+ KB
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Casos&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/4df37432c715cfb517fb23f6c6607275ce7dae5755207dc313028f8d9730b192.png" src="../../_images/4df37432c715cfb517fb23f6c6607275ce7dae5755207dc313028f8d9730b192.png" />
+<img alt="../../_images/35abf6e7cb6ba1a0376f50e7c65db7d1a591a5070a24d3070e3583c998dbdb64.png" src="../../_images/35abf6e7cb6ba1a0376f50e7c65db7d1a591a5070a24d3070e3583c998dbdb64.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2277,7 +2268,7 @@ memory usage: 532.3+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/321825822425562822a3059f254760a41fcb5147cc1e05ddaa4a80abd7500752.png" src="../../_images/321825822425562822a3059f254760a41fcb5147cc1e05ddaa4a80abd7500752.png" />
+<img alt="../../_images/311bad923c860ad53097a6dfc103074f87eb35db53a140f506ca06ac709c5993.png" src="../../_images/311bad923c860ad53097a6dfc103074f87eb35db53a140f506ca06ac709c5993.png" />
 </div>
 </div>
 <p>El método <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.lineplot.html">seaborn.lineplot()</a> permite crear gráficos de líneas con seaborn.</p>
